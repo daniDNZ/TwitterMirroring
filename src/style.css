@@ -1,0 +1,265 @@
+/*
+    RESET
+*/
+@font-face {
+  font-family: TwitterChirpExtendedHeavy;
+  src: url(https://abs.twimg.com/fonts/v1/chirp-extended-heavy-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/v1/chirp-extended-heavy-web.woff) format("woff");
+  font-weight: 800;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/v2/chirp-regular-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/v2/chirp-regular-web.woff) format("woff");
+  font-weight: 400;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/v2/chirp-medium-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/v2/chirp-medium-web.woff) format("woff");
+  font-weight: 500;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/v2/chirp-bold-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/v2/chirp-bold-web.woff) format("woff");
+  font-weight: 700;
+  font-style: "normal";
+  font-display: "swap";
+}
+@font-face {
+  font-family: TwitterChirp;
+  src: url(https://abs.twimg.com/fonts/v2/chirp-heavy-web.woff2) format("woff2");
+  src: url(https://abs.twimg.com/fonts/v2/chirp-heavy-web.woff) format("woff");
+  font-weight: 800;
+  font-style: "normal";
+  font-display: "swap";
+}
+@media (prefers-contrast: high) {
+  :root {
+    color: black;
+    background-color: white;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* optional */
+  object-fit: cover;
+  /* optional */
+  object-position: center center;
+}
+
+a {
+  display: block;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote::before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+  /* optional */
+}
+
+textarea:focus,
+input:focus,
+input[type]:focus {
+  outline: 0 none;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  display: block;
+  fill: currentColor;
+  pointer-events: none;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 0.9rem;
+  font-family: "TwitterChirp";
+  color: #000000;
+  background-color: #ffffff;
+  /* optional */
+  /* optional */
+  hyphens: auto;
+  /* optional */
+  font-smooth: always;
+  /* optional */
+  -webkit-font-smoothing: antialiased;
+  /* optional */
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #ffffff;
+    background-color: #000000;
+  }
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+}
+.header__container {
+  width: 100vw;
+  height: 50px;
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+.header__img {
+  max-width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.header__stars {
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+}
+.header__title {
+  font-size: 1.1em;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.show-tweets {
+  margin-top: 50px;
+}
+.show-tweets__btn {
+  width: 100%;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 0.9rem 0;
+}
+.show-tweets__span {
+  font-weight: 500;
+  color: rgb(30, 135, 235);
+}
+
+.nav {
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+}
+.nav__a {
+  width: 25vw;
+  padding: 0.8rem;
+  position: relative;
+}
+.nav__a--active:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: rgb(30, 135, 235);
+  position: absolute;
+  top: 9px;
+  left: 54px;
+}
+.nav__a .menu-icon {
+  height: 24.5px;
+  width: 24.5px;
+  margin: 0 auto;
+}
+.nav__li {
+  position: relative;
+}
+.nav__ul {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
