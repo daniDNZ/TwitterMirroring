@@ -49,12 +49,12 @@ $colors: (
     'dark'          : #000000,
     'twitter-blue'  : rgb(30,135,235),
     'grey-dark'     : rgb(94, 99, 103),
-    'grey-light'    : rgb(66, 81, 94),
+    'grey-light'    : rgb(81, 99, 114),
 );
 
 // Fonts
 $fonts: (
-    'primary' : ('TwitterChirp')
+    'primary' : ('TwitterChirp', '-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', 'Helvetica', 'Arial', 'sans-serif')
 );
 
 // Variables

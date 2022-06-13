@@ -1,0 +1,111 @@
+[
+    {
+        "id": "1",
+        "profilePic": "/img/profilepic-1.jpeg",
+        "name": "Brais Moure",
+        "username": "@MoureDev",
+        "time": "10h",
+        "verified": true,
+        "content": "Subo la apuesta de&nbsp;<a href='#home' class='tweet__a'>@SamsungEspana</a><br /><br />- Hoy es festivo en mi comunidad<br />- Soy autónomo y mis clientes no son de aquí",
+        "link": null,
+        "img": null,
+        "counters": {
+            "comments": 1,
+            "retweets": 12,
+            "likes": 89
+        }
+    },
+    {
+        "id": "2",
+        "profilePic": "/img/profilepic.jpg",
+        "name": "Dani Sanz",
+        "username": "@danisanzdev",
+        "time": "1h",
+        "verified": false,
+        "content": "Este gato se llama Link y Ganondorf le teme.",
+        "link": null,
+        "img": ["/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg"],
+        "counters": {
+            "comments": 1,
+            "retweets": 3,
+            "likes": 89
+        }
+    },
+    {
+        "id": "3",
+        "profilePic": "/img/profilepic.jpg",
+        "name": "Dani Sanz estupendismo",
+        "username": "@danisafdsfasdfnzdev",
+        "time": "10h",
+        "verified": true,
+        "content": "Ahora dos fotos del temible gato psicópata",
+        "link": null,
+        "img": [
+            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg", 
+            "/img/7FEADAFA-F392-4F64-B733-15B02487397F_1_105_c.jpeg"
+        ],
+        "counters": {
+            "comments": 1,
+            "retweets": 12,
+            "likes": 89
+        }
+    },
+    {
+        "id": "4",
+        "profilePic": "/img/profilepic.jpg",
+        "name": "Dani Sanz",
+        "username": "@danisanzdev",
+        "time": "10h",
+        "verified": false,
+        "content": "Con 3 fotos, probablemente estemos al filo de morir por uña de gato. <br /> No le hemos pedido permiso...",
+        "link": null,
+        "img": [
+            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg", 
+            "/img/7FEADAFA-F392-4F64-B733-15B02487397F_1_105_c.jpeg",
+            "/img/B57E3095-751F-4BB8-845D-B038A4608CD5_1_105_c.jpeg"
+        ],
+        "counters": {
+            "comments": 1,
+            "retweets": 12,
+            "likes": 89
+        }
+    },
+    {
+        "id": "5",
+        "profilePic": "/img/profilepic.jpg",
+        "name": "Dani Sanz",
+        "username": "@danisanzdev",
+        "time": "10h",
+        "verified": true,
+        "content": "Definitivamente digamos adiós a la vida porque me ha pillado. Vamos a morir, socorro.",
+        "link": null,
+        "img": [
+            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg", 
+            "/img/7FEADAFA-F392-4F64-B733-15B02487397F_1_105_c.jpeg",
+            "/img/B57E3095-751F-4BB8-845D-B038A4608CD5_1_105_c.jpeg",
+            "/img/D1312C16-9F84-4CE0-84FE-29A17CA49C1C_1_105_c.jpeg"
+        ],
+        "counters": {
+            "comments": 1,
+            "retweets": 12,
+            "likes": 200
+        }
+    },
+    {
+        "id": "6",
+        "profilePic": "/img/profilepic.jpg",
+        "name": "Dani Sanz",
+        "username": "@danisanzdev",
+        "time": "10h",
+        "verified": true,
+        "content": "Adelante con la técnica del arbusto. Es la única forma de sobrevivir.",
+        "link": null,
+        "img": null,
+        "gif": ["/img/gif/homer.gif"],
+        "counters": {
+            "comments": 1,
+            "retweets": 12,
+            "likes": 89
+        }
+    }
+]

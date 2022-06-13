@@ -1,3 +1,7 @@
+import Tweet from "../tweet/Tweet";
+import tweets from '../../data/tweets/tweets.json';
+
+
 export default function Feed() {
     return (
             <>
@@ -8,7 +12,11 @@ export default function Feed() {
                         </span>
                     </button>
                 </div>
-                <div className="feed"></div>
+                <div className="feed">
+                    {
+                        tweets.map(tweet => <Tweet tweet={tweet} key={tweet.id}/>)
+                    }
+                </div>
             </>
     );
 }
