@@ -8,7 +8,7 @@ function App() {
         <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/:username/status/:tweet/img/:n" element={<ImageView />} />
+            <Route path="/:username/status/:tweetId/img/:n" element={<ImageView />} />
         </Routes>
         </BrowserRouter>
     </div>

@@ -9,21 +9,24 @@
 
 // TWEET
 .tweet {
+    max-width: 1057;
     border-top: layout.$border;
 
     padding: .7rem 1rem;
 
     @include layout.flex(row, nowrap, center, flex-start);
     gap: .7rem;
+
     // LEFT
     &__left {
         height: 100%;
     }
-    
+
     &__profile-pic {
         width: 46px;
         min-width: 46px;
     }
+
     // LEFT END
 
     // MAIN
@@ -32,7 +35,7 @@
         gap: .5rem;
     }
 
-        // HEADER
+    // HEADER
     &__header {
         width: 100%;
 
@@ -40,7 +43,7 @@
         gap: .5rem;
     }
 
-            // TITLE
+    // TITLE
     &__title {
         @include layout.flex(row, nowrap, flex-start, center);
         gap: .2rem;
@@ -55,7 +58,7 @@
         font-weight: 600;
     }
 
-    &__verified .icon{
+    &__verified .icon {
         width: 17.5px;
         height: 17.5px;
 
@@ -76,7 +79,7 @@
 
         @include titleSecondary();
     }
-    
+
     &__time {
         @include titleSecondary();
 
@@ -84,16 +87,17 @@
     }
 
     &__time::before {
-        content:'';
+        content: '';
         width: 2px;
         height: 2px;
         border-radius: 50%;
         background-color: base.$color-text-secondary;
 
         margin: 0 .3rem 0 .1rem;
-        
+
     }
-            // TITLE END
+
+    // TITLE END
 
     &__dots {}
 
@@ -102,19 +106,21 @@
         height: 17.5px;
         fill: base.$color-text-secondary;
     }
-        // HEADER END
 
-        // CONTENT
+    // HEADER END
+
+    // CONTENT
     &__content {
         @include layout.flex(column, nowrap, flex-start, flex-start);
         gap: 1rem;
     }
-// 2 img = 300 * 170, una por lado
-// 3 img = 300 * 170, una izq, 2 drch
-// 4 img = 300 * 170, una por esquina
+
+    // 2 img = 300 * 170, una por lado
+    // 3 img = 300 * 170, una izq, 2 drch
+    // 4 img = 300 * 170, una por esquina
     &__gallery {
         width: 300px;
-        max-height: 170px;
+        height: 170px;
         border-radius: 15px;
         overflow: hidden;
 
@@ -123,11 +129,11 @@
     }
 
     &__gallery--2 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
     }
 
     &__gallery--3 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;
     }
 
@@ -136,13 +142,13 @@
     }
 
     &__gallery--4 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;
     }
 
     &__image {
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        max-height: 100%;
         object-fit: cover;
     }
 
@@ -151,9 +157,10 @@
         width: 300px;
         border-radius: 15px;
     }
-        // CONTENT END
 
-        // TWEET BUTTONS
+    // CONTENT END
+
+    // TWEET BUTTONS
     &__buttons {
         width: 100%;
 
@@ -171,7 +178,7 @@
         font-size: .7rem;
         color: base.$color-text-secondary;
     }
-    
+
     &__a {
         color: base.$color-twitter-blue;
         font-weight: 500;
@@ -185,9 +192,10 @@
 
         fill: base.$color-text-secondary;
     }
-    
+
     &__count {}
-        // TWEET BUTTONS END
+
+    // TWEET BUTTONS END
     // MAIN END
 }
 
@@ -205,3 +213,76 @@
 }
 
 .tweet-share {}
+
+
+
+// IMAGE DETAIL GALLERY
+.image-view {
+    width: 390px;
+    margin: 0 auto;
+    background-color: rgb(167, 149, 127);
+    
+    @include layout.flex(column, nowrap, center, center);
+
+    &__header {
+        width: 100%;
+
+        padding: 1.2rem;
+
+        @include layout.flex(row, nowrap, space-between, center);
+
+    }
+
+    &__header .icon {
+        height: 19px;
+        width: 19px;
+        fill: white;
+    }
+
+    &__close {}
+    
+    &__menu {}
+    
+    &__main {
+        height: 100%;
+        @include layout.flex(column, nowrap, center, center);
+
+    }
+    
+    &__gallery {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+
+        @include layout.flex(row, nowrap, flex-start, center);
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    
+    &__img {
+        scroll-snap-align: center;
+
+        flex: 0 0 auto;
+    }
+    
+    &__footer {
+        width: 100%;
+
+        padding: .8rem 1.6rem;
+    }
+
+    &__footer .icon {
+        width: 21px;
+        height: 21px;
+        fill: white;
+    }
+
+    &__footer .tweet__count {
+        color: white;
+        font-weight: 600;
+    }
+
+
+}

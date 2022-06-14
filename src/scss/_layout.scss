@@ -10,20 +10,25 @@
 // Variables
 $border:  .5px solid rgba($color: #000000, $alpha: .1);
 
+button {
+    cursor: pointer;
+}
+
 .header {
+    width: 100%;
     background-color: rgba(base.$color-bg, .8);
     
     backdrop-filter: blur(10px);
 
-    
     position: fixed;
     top: 0;
     
     &__container {
-        width: 100vw;
         height: 50px;
+        width: 390px;
         
         padding: .6rem .9rem;
+        margin: 0 auto;
 
         @include flex(row, nowrap, space-between, center);
         gap: 1.5rem;
@@ -50,7 +55,8 @@ $border:  .5px solid rgba($color: #000000, $alpha: .1);
 }
 
 .show-tweets {
-    margin-top: 50px;
+    width: 390px;
+    margin: 50px auto 0;
 
     &__btn {
         width: 100%;
@@ -67,16 +73,22 @@ $border:  .5px solid rgba($color: #000000, $alpha: .1);
 }
 
 .feed {
+    max-width: 390px;
+
+    margin: 0 auto;
+
+    @include flex(column, nowrap, flex-start, center)
 }
 
 .nav {
-    border-top: $border;
+
     background-color: base.$color-bg;
+    width: 100%;
 
     position: fixed;
     bottom: 0;
     &__a {
-        width: 25vw;
+        width: calc(390px / 4);
         padding: .8rem;
 
         position: relative;
@@ -111,14 +123,16 @@ $border:  .5px solid rgba($color: #000000, $alpha: .1);
 
 
     &__li {
-        position: relative;
+        // position: relative;
     }
 
     &__ul {
-        width: 100vw;
+        width: 390px;
+        border-top: $border;
+
+        margin: 0 auto;
 
         position: relative;
-
         @include flex(row, nowrap, center, center);
     }
 }
