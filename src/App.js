@@ -1,18 +1,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home";
-import ImageView from "./pages/imageView/ImageView";
+import Home from "./Layouts/Home";
+import ImageView from "./Layouts/ImageView";
+import TweetView from "./Layouts/TweetView";
 
 function App() {
-  return (
-    <div className="App">
-        <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/:username/status/:tweetId/img/:n" element={<ImageView />} />
-        </Routes>
-        </BrowserRouter>
-    </div>
-  );
+    return (
+        <div className="app">
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route
+                        path="/:username/status/:tweetId/img/:n"
+                        element={<ImageView />}
+                    />
+                    <Route
+                        path="/:username/status/:tweetId"
+                        element={<TweetView />}
+                    />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;

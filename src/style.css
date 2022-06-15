@@ -177,6 +177,10 @@ body {
   }
 }
 
+b {
+  font-weight: 600;
+}
+
 button {
   cursor: pointer;
 }
@@ -202,6 +206,7 @@ button {
 }
 .header__img {
   max-width: 30px;
+  max-height: 30px;
 }
 .header__stars {
   width: 19px;
@@ -226,7 +231,7 @@ button {
 }
 .show-tweets__span {
   font-weight: 500;
-  color: rgb(30, 135, 235);
+  color: rgb(29, 155, 240);
 }
 
 .feed {
@@ -238,6 +243,112 @@ button {
   align-items: center;
 }
 
+.tweet-view {
+  padding: 0 0.9rem;
+}
+.tweet-view__header {
+  width: 100%;
+  padding: 0.6rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.1rem;
+}
+.tweet-view__go-back .icon {
+  height: 19px;
+  width: 19px;
+}
+.tweet-view__h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.tweet-view__open-app {
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgb(207, 217, 222);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  margin-left: auto;
+}
+.t-detail__header {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+}
+.t-detail__header .dots {
+  align-self: flex-start;
+}
+.t-detail__profile-info {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.1rem;
+}
+.t-detail__text {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.t-detail__data {
+  padding: 1rem 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+.t-detail__counters {
+  padding: 1rem 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+.t-detail__counter {
+  margin-right: 1.1rem;
+}
+.t-detail__interaction {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+}
+.t-detail__interaction .tweet__buttons {
+  margin-top: 0;
+  justify-content: space-around;
+}
+.t-detail__interaction .tweet__icon .icon {
+  width: 21px;
+  height: 21px;
+}
+
+.profile-info__name {
+  font-weight: 600;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.t-comments__reply {
+  width: 100%;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 0.7rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.t-comments__input::placeholder {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.t-comments__reply-btn {
+  background-color: rgb(29, 155, 240);
+  opacity: 0.5;
+  font-weight: 600;
+  color: white;
+  border-radius: 50px;
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+}
 .nav {
   background-color: #ffffff;
   width: 100%;
@@ -254,7 +365,7 @@ button {
   width: 6px;
   height: 6px;
   border-radius: 6px;
-  background-color: rgb(30, 135, 235);
+  background-color: rgb(29, 155, 240);
   position: absolute;
   top: -3.5px;
   left: 70%;
@@ -281,8 +392,33 @@ button {
 }
 
 .profile-pic {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.new-tweet {
+  height: 53px;
+  width: 53px;
+  background-color: rgb(29, 155, 240);
+  border-radius: 50%;
+  box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 8px, rgba(101, 119, 134, 0.25) 0px 1px 3px 1px;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+}
+.new-tweet .icon {
+  height: 23px;
+  width: 23px;
+  fill: white;
+  margin: 0 auto;
+}
+
+.dots .icon {
+  width: 17.5px;
+  height: 17.5px;
+  fill: rgb(81, 99, 114);
 }
 
 .tweet {
@@ -297,10 +433,6 @@ button {
 }
 .tweet__left {
   height: 100%;
-}
-.tweet__profile-pic {
-  width: 46px;
-  min-width: 46px;
 }
 .tweet__main {
   display: flex;
@@ -334,7 +466,7 @@ button {
 .tweet__verified .icon {
   width: 17.5px;
   height: 17.5px;
-  fill: rgb(30, 135, 235);
+  fill: rgb(29, 155, 240);
 }
 .tweet__username {
   max-width: 6rem;
@@ -360,11 +492,6 @@ button {
   border-radius: 50%;
   background-color: rgb(81, 99, 114);
   margin: 0 0.3rem 0 0.1rem;
-}
-.tweet__dots .icon {
-  width: 17.5px;
-  height: 17.5px;
-  fill: rgb(81, 99, 114);
 }
 .tweet__content {
   display: flex;
@@ -411,6 +538,7 @@ button {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 }
 .tweet__btn {
   display: flex;
@@ -424,7 +552,7 @@ button {
   color: rgb(81, 99, 114);
 }
 .tweet__a {
-  color: rgb(30, 135, 235);
+  color: rgb(29, 155, 240);
   font-weight: 500;
 }
 .tweet__icon .icon {
