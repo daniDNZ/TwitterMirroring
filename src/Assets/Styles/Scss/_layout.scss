@@ -40,9 +40,9 @@ button {
         position: relative;
     }
 
-    &__img {
-        max-width: 30px;
-        max-height: 30px;
+    & .header__img {
+        width: 30px;
+        height: 30px;
     }
 
     &__stars {

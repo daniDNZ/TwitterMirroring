@@ -204,9 +204,9 @@ button {
   gap: 1.5rem;
   position: relative;
 }
-.header__img {
-  max-width: 30px;
-  max-height: 30px;
+.header .header__img {
+  width: 30px;
+  height: 30px;
 }
 .header__stars {
   width: 19px;
@@ -538,7 +538,6 @@ button {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
 }
 .tweet__btn {
   display: flex;

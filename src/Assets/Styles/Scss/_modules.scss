@@ -180,7 +180,6 @@
         margin-top: 0.5rem;
 
         @include layout.flex(row, nowrap, space-between, center);
-        z-index: 100;
     }
 
     &__btn {
