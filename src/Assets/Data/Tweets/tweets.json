@@ -1,6 +1,7 @@
 [
     {
-        "id": "1",
+        "id": 1,
+        "replyTo": null,
         "profilePic": "/img/profilepic-1.jpeg",
         "name": "Brais Moure",
         "username": "MoureDev",
@@ -15,7 +16,8 @@
         }
     },
     {
-        "id": "2",
+        "id": 2,
+        "replyTo": null,
         "profilePic": "/img/profilepic.jpg",
         "name": "Dani Sanz",
         "username": "danisanzdev",
@@ -30,7 +32,8 @@
         }
     },
     {
-        "id": "3",
+        "id": 3,
+        "replyTo": null,
         "profilePic": "/img/profilepic.jpg",
         "name": "Dani Sanz estupendismo",
         "username": "danisafdsfasdfnzdev",
@@ -48,7 +51,8 @@
         }
     },
     {
-        "id": "4",
+        "id": 4,
+        "replyTo": null,
         "profilePic": "/img/profilepic.jpg",
         "name": "Dani Sanz",
         "username": "danisanzdev",
@@ -67,7 +71,8 @@
         }
     },
     {
-        "id": "5",
+        "id": 5,
+        "replyTo": null,
         "profilePic": "/img/profilepic.jpg",
         "name": "Dani Sanz",
         "username": "danisanzdev",
@@ -87,7 +92,8 @@
         }
     },
     {
-        "id": "6",
+        "id": 6,
+        "replyTo": null,
         "profilePic": "/img/profilepic.jpg",
         "name": "Dani Sanz",
         "username": "danisanzdev",
@@ -103,7 +109,8 @@
         }
     },
     {
-        "id": "7",
+        "id": 7,
+        "replyTo": null,
         "profilePic": "/img/profilepic.jpg",
         "name": "Dani Sanz",
         "username": "danisanzdev",
@@ -119,7 +126,8 @@
         }
     },
     {
-        "id": "8",
+        "id": 8,
+        "replyTo": null,
         "profilePic": "/img/profilepic.jpg",
         "name": "Dani Sanz",
         "username": "danisanzdev",
@@ -132,6 +140,40 @@
             "comments": null,
             "retweets": null,
             "likes": 3
+        }
+    },
+    {
+        "id": 9,
+        "replyTo": 1,
+        "profilePic": "/img/profilepic.jpg",
+        "name": "Dani Sanz",
+        "username": "danisanzdev",
+        "date": "2022-06-17T08:18:56.821Z",
+        "verified": true,
+        "content": "Necesitas unas vacaciones...",
+        "img": null,
+        "gif": null,
+        "counters": {
+            "comments": null,
+            "retweets": null,
+            "likes": 17
+        }
+    },
+    {
+        "id": 10,
+        "replyTo": 9,
+        "profilePic": "/img/profilepic-1.jpeg",
+        "name": "Brais Moure",
+        "username": "MoureDev",
+        "date": "2022-06-17T09:18:56.821Z",
+        "verified": true,
+        "content": "Ya te digo!",
+        "img": null,
+        "gif": null,
+        "counters": {
+            "comments": null,
+            "retweets": 23,
+            "likes": 54
         }
     }
 ]

@@ -8,6 +8,12 @@
     align-items: $align;
 }
 
+@mixin tabletS() {
+    @media screen and (min-width: 500px) {
+        @content;
+    }
+}
+
 // Variables
 $border: 0.5px solid
     rgba(
@@ -19,18 +25,102 @@ button {
     cursor: pointer;
 }
 
+// PAGE SIZE
+.app {
+    margin: 0 auto;    
+
+    @include flex(row, nowrap, center, flex-start);
+
+    @include tabletS(){
+        max-width: 700px;
+    }
+}
+
+// HOME
+.home {
+    @include tabletS(){
+        max-width: 600px;
+        @include flex(row, nowrap, flex-end, flex-start);
+    }
+}
+
+.sidebar-nav {
+    height: 100vh;
+    
+    margin: 0 auto; 
+    padding: 0 1rem;
+
+    position: sticky;
+    top:0;
+
+    display: none;
+
+    @include tabletS(){
+        display: flex;
+    }
+
+    &__container {
+        height: 100%;
+        
+        @include flex(column, nowrap, space-between, center);
+    }
+
+    &__buttons {
+        & .nav__a {
+            width: fit-content;
+            
+            margin: 0 auto;
+            padding: .9rem .8rem;
+
+        }
+    }
+
+    &__logo .nav__a{
+        width: fit-content;
+
+        margin: 0 auto;
+        padding-bottom: 1rem;
+
+        & .icon {
+            width: 30px;
+            fill: base.$color-twitter-blue;
+        }
+    }
+
+    &__user {
+        & .profile-pic {
+            width: 38px;
+            height: 38px;
+
+            margin: 1.5rem auto;
+        }
+    }
+}
+
+// HOME -> MAIN
+.home__main {
+    width: 100%;
+    @include tabletS(){
+        border-left: $border;
+        border-right: $border;
+    }
+}
+
 .header {
     width: 100%;
     background-color: rgba(base.$color-bg, 0.8);
 
     backdrop-filter: blur(10px);
 
-    position: fixed;
+    position: sticky;
     top: 0;
 
+    @include tabletS(){
+        width: 100%;
+    }
     &__container {
         height: 50px;
-        width: 390px;
+        width: 100%;
 
         padding: 0.6rem 0.9rem;
         margin: 0 auto;
@@ -38,11 +128,18 @@ button {
         @include flex(row, nowrap, space-between, center);
         gap: 1.5rem;
         position: relative;
+
     }
 
     & .header__img {
-        width: 30px;
-        height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+
+        @include tabletS(){
+            display: none;
+        }
     }
 
     &__stars {
@@ -56,15 +153,17 @@ button {
         font-weight: 600;
 
         flex-grow: 1;
+
+        @include tabletS(){
+            font-size: 1.4em;
+        }
     }
 }
 
 .show-tweets {
-    width: 390px;
-    margin: 50px auto 0;
-
     &__btn {
         width: 100%;
+        border-bottom: $border;
         border-top: $border;
         cursor: pointer;
 
@@ -78,12 +177,9 @@ button {
 }
 
 .feed {
-    max-width: 390px;
-
     margin: 0 auto;
 
     @include flex(column, nowrap, flex-start, center);
-    // position: relative;
 }
 
 // TWEET VIEW
@@ -96,6 +192,9 @@ button {
 
         @include flex(row, nowrap, flex-start, center);
         gap: 2.1rem;
+
+        position: sticky;
+        top: 0;
     }
 
     &__go-back {
@@ -120,13 +219,9 @@ button {
         margin-left: auto;
     }
 
-    &__main {
-    }
-
-    &__tweet {
-    }
-
-    &__comments {
+    & .tweet {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -152,9 +247,6 @@ button {
     &__text {
         font-size: 1.4rem;
         font-weight: 400;
-    }
-
-    &__media {
     }
 
     &__data {
@@ -218,29 +310,24 @@ button {
     }
 
     &__reply-btn {
-        background-color: base.$color-twitter-blue;
-        opacity: 0.5;
-        font-weight: 600;
-        color: white;
-        border-radius: 50px;
-
-        margin-left: auto;
-        padding: 0.5rem 1rem;
+       
     }
 
-    &__comments-container {
-    }
 }
 
 .nav {
     background-color: base.$color-bg;
     width: 100%;
 
-    position: fixed;
+    position: sticky;
     bottom: 0;
 
+    @include tabletS(){
+        display: none;
+    }
+
     &__a {
-        width: calc(390px / 4);
+        width: calc(100vw / 4);
         padding: 0.8rem;
 
         position: relative;
@@ -277,12 +364,79 @@ button {
     }
 
     &__ul {
-        width: 390px;
+        width: 100%;
         border-top: $border;
 
         margin: 0 auto;
 
         position: relative;
         @include flex(row, nowrap, center, center);
+    }
+}
+
+// IMAGE DETAIL GALLERY
+.image-view {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: rgb(167, 149, 127);
+
+    @include flex(column, nowrap, space-between, center);
+    position: absolute;
+
+    &__header {
+        width: 100%;
+
+        padding: 1.2rem;
+
+        @include flex(row, nowrap, space-between, center);
+    }
+
+    &__header .icon {
+        height: 19px;
+        width: 19px;
+        fill: white;
+    }
+
+    &__main {
+        height: 100%;
+        @include flex(column, nowrap, center, center);
+    }
+
+    &__gallery {
+        max-height: 80vh;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+
+        @include flex(row, nowrap, flex-start, center);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__img {
+        max-height: 100%;
+        scroll-snap-align: center;
+
+        flex: 0 0 auto;
+    }
+
+    &__footer {
+        width: 100%;
+
+        padding: 0.8rem 1.6rem;
+    }
+
+    &__footer .tweet__icon .icon {
+        width: 21px;
+        height: 21px;
+        fill: white;
+    }
+
+    &__footer .tweet__count {
+        color: white;
+        font-weight: 600;
     }
 }

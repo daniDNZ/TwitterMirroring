@@ -9,6 +9,18 @@
     cursor: pointer;
 }
 
+// BUTTON STANDARD
+.btn {
+    background-color: base.$color-twitter-blue;
+    opacity: 0.5;
+    font-weight: 600;
+    color: white;
+    border-radius: 50px;
+
+    margin-left: auto;
+    padding: 0.5rem .9rem;
+}
+
 // NEW TWEET BUTTON
 .new-tweet {
     height: 53px;
@@ -22,12 +34,30 @@
     bottom: 70px;
     right: 20px;
 
+    @include layout.tabletS() {
+        height: 48px;
+        width: 48px;
+        box-shadow: none;
+
+        margin: .7rem auto;
+        
+        position: relative;
+        bottom: inherit;
+        right: inherit;
+    }
+
     & .icon {
         height: 23px;
         width: 23px;
         fill: white;
 
         margin: 0 auto;
+    }
+}
+
+.feed .new-tweet {
+    @include layout.tabletS() {
+        display: none;
     }
 }
 
@@ -40,23 +70,26 @@
 
 // TWEET
 .tweet {
-    max-width: 1057;
-    border-top: layout.$border;
+    width: 100%;
+    border-bottom: layout.$border;
 
     padding: 0.7rem 1rem;
 
-    @include layout.flex(row, nowrap, center, flex-start);
+    @include layout.flex(row, nowrap, flex-start, flex-start);
     gap: 0.7rem;
 
     // LEFT
     &__left {
         height: 100%;
+        min-width: fit-content;
     }
 
     // LEFT END
 
     // MAIN
     &__main {
+        width: 100%;
+
         @include layout.flex(column, nowrap, flex-start, flex-start);
         gap: 0.5rem;
     }
@@ -133,22 +166,22 @@
     }
 
     &__gallery {
-        width: 300px;
-        height: 170px;
+        width: 100%;
         border-radius: 15px;
         overflow: hidden;
+        aspect-ratio: 16/9;
 
         display: grid;
         gap: 2px;
     }
 
     &__gallery--2 {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     &__gallery--3 {
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
     }
 
     &__gallery--3 .tweet__image-g3:first-child {
@@ -156,8 +189,8 @@
     }
 
     &__gallery--4 {
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
     }
 
     &__image {
@@ -169,6 +202,14 @@
         max-height: 400px;
         width: 300px;
         border-radius: 15px;
+    }
+
+    &__reply {
+        color: base.$color-text-secondary;
+
+        & .tweet__a {
+            display: inline;
+        }
     }
 
     // CONTENT END
@@ -197,9 +238,6 @@
         font-weight: 500;
     }
 
-    &__icon {
-    }
-
     &__icon .icon {
         width: 17.5px;
         height: 17.5px;
@@ -207,97 +245,38 @@
         fill: base.$color-text-secondary;
     }
 
-    &__count {
-    }
-
     // TWEET BUTTONS END
     // MAIN END
 }
 
-// TWEET BUTTONS
-.tweet-comment {
-    &__count {
-    }
-}
+// WHATSHAPPENING 
+.wh {
+    display: none;
 
-.tweet-like {
-    &__count {
-    }
-}
-
-.tweet-retweet {
-    &__count {
-    }
-}
-
-.tweet-share {
-}
-
-// IMAGE DETAIL GALLERY
-.image-view {
-    width: 390px;
-    margin: 0 auto;
-    background-color: rgb(167, 149, 127);
-
-    @include layout.flex(column, nowrap, center, center);
-
-    &__header {
-        width: 100%;
-
-        padding: 1.2rem;
-
-        @include layout.flex(row, nowrap, space-between, center);
+    @include layout.tabletS(){
+        display: flex;
     }
 
-    &__header .icon {
-        height: 19px;
-        width: 19px;
-        fill: white;
-    }
+    &__input {
+        width: 12rem;
+        height: 48px;
 
-    &__close {
-    }
-
-    &__menu {
-    }
-
-    &__main {
-        height: 100%;
-        @include layout.flex(column, nowrap, center, center);
-    }
-
-    &__gallery {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-
-        @include layout.flex(row, nowrap, flex-start, center);
-
-        &::-webkit-scrollbar {
-            display: none;
+        &::placeholder{
+            font-size: 1.2rem;
+            font-weight: 400;
         }
     }
 
-    &__img {
-        scroll-snap-align: center;
-
-        flex: 0 0 auto;
+    &__buttons {
+        @include layout.flex(row, nowrap, flex-start, center);
+        gap: 1rem;
     }
 
-    &__footer {
-        width: 100%;
-
-        padding: 0.8rem 1.6rem;
-    }
-
-    &__footer .icon {
-        width: 21px;
-        height: 21px;
-        fill: white;
-    }
-
-    &__footer .tweet__count {
-        color: white;
-        font-weight: 600;
+    &__btn {
+        & .icon {
+            width: 19px;
+            height: 19px;
+            fill: base.$color-twitter-blue;
+        }
     }
 }

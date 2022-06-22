@@ -1,11 +1,11 @@
-import { ReactComponent as Verified } from "../../../Assets/Svg/verified.svg";
+import Logos from '../Logos'
 
 // Return verified icon
-export default function getVerified(tweet) {
-    let verified = <></>;
-    if (tweet.verified) {
-        verified = <span className="tweet__verified">{<Verified />}</span>;
-    }
+export default function getVerified (tweet) {
+  let verified = <></>
+  if (tweet.verified) {
+    verified = <span className='tweet__verified'><Logos logoName='verified' /></span>
+  }
 
-    return verified;
+  return verified
 }

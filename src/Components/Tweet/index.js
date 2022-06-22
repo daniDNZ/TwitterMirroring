@@ -1,145 +1,126 @@
-import { ReactComponent as Dots } from "../../Assets/Svg/Tweet/more-dots.svg";
-import { useEffect } from "react";
-import TweetButtons from "../TweetButtons";
-import { Link, useNavigate } from "react-router-dom";
-import getVerified from "../../Services/Utils/getVerified";
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import TweetButtons from '../TweetButtons'
+import getVerified from '../../Services/Utils/getVerified'
 
-export default function Tweet({ tweet }) {
-    let images = <></>;
-    let galleryClass;
+import tweets from '../../Assets/Data/Tweets/tweets.json'
+import setGallery from '../../Services/Utils/setGallery'
+import Logos from '../../Services/Utils/Logos'
 
-    // Get date difference
-    const currentDate = new Date();
-    const tweetDate = new Date(tweet.date);
-    const navigate = useNavigate();
-    let timeToShow;
+export default function Tweet ({ tweet }) {
+  let images = <></>
+  const navigate = useNavigate()
+
+  // Get date difference
+  const getDateDifference = tweet => {
+    const currentDate = new Date()
+    const tweetDate = new Date(tweet.date)
+    let timeToShow
 
     if (currentDate.toLocaleDateString() === tweetDate.toLocaleDateString()) {
-        currentDate.getHours() === tweetDate.getHours()
-            ? (timeToShow = `${
-                  currentDate.getMinutes() - tweetDate.getMinutes()
-              }m`)
-            : (timeToShow = `${
-                  currentDate.getHours() - tweetDate.getHours()
-              }h`);
+      currentDate.getHours() === tweetDate.getHours()
+        ? (timeToShow = `${
+        currentDate.getMinutes() - tweetDate.getMinutes()
+      }m`)
+        : (timeToShow = `${
+        currentDate.getHours() - tweetDate.getHours()
+      }h`)
     } else {
-        timeToShow = ` ${
-            tweetDate.toDateString().split(" ")[1]
-        } ${tweetDate.getDate()}`;
+      timeToShow = ` ${
+        tweetDate.toDateString().split(' ')[1]
+      } ${tweetDate.getDate()}`
     }
 
-    // Get verified icon
-    const verified = getVerified(tweet);
+    return timeToShow
+  }
 
-    // Gallery generator
-    const generateImgs = (gClass) => {
-        const imgs = (
-            <div className={"tweet__gallery tweet__gallery--" + gClass}>
-                {tweet.img.map((img, index) => (
-                    <Link
-                        to={`/${tweet.username}/status/${tweet.id}/img/${
-                            index + 1
-                        }`}
-                        className={"tweet__image-g" + gClass}
-                        key={"img-" + gClass + img}
-                    >
-                        <img src={img} alt="" className={"tweet__image"} />
-                    </Link>
-                ))}
-            </div>
-        );
-        return imgs;
-    };
+  const timeToShow = getDateDifference(tweet)
 
-    // Setting gallery
-    if (tweet.img !== null) {
-        switch (tweet.img.length) {
-            case 1:
-                images = (
-                    <Link to={`/${tweet.username}/status/${tweet.id}/img/1`}>
-                        <img
-                            src={tweet.img}
-                            alt=""
-                            className="tweet__image tweet__image-g1"
-                        />
-                    </Link>
-                );
-                break;
-            case 2:
-                galleryClass = "2";
-                images = generateImgs(galleryClass);
-                break;
-            case 3:
-                galleryClass = "3";
-                images = generateImgs(galleryClass);
-                break;
-            case 4:
-                galleryClass = "4";
-                images = generateImgs(galleryClass);
-                break;
-            default:
-                break;
-        }
-    } else if (tweet.gif !== null) {
-        images = (
-            <img
-                src={tweet.gif}
-                alt=""
-                className="tweet__image tweet__image-g1"
-            />
-        );
-    }
+  // Get verified icon
+  const verified = getVerified(tweet)
 
-    // onClick -> Navigate to tweet view
-    const goToTweet = (e) => {
-        if (
-            (e.target === e.currentTarget) |
-            (e.target === document.querySelector(".tweet__p"))
-        )
-            navigate(`/${tweet.username}/status/${tweet.id}`);
-    };
+  // Set gallery
+  images = setGallery(tweet)
 
-    useEffect(() => {
-        // Deploying content
-        const tweetContent = document.querySelector("#text-" + tweet.id);
-        tweetContent.innerHTML = `
+  // onClick -> Navigate to tweet view
+  const goToTweet = (e) => {
+    // Controlling click
+    if (
+      (e.target === e.currentTarget) |
+      (e.target === document.querySelector(`#tweet-${tweet.id} .tweet__p`)) |
+      (e.target === document.querySelector(`#tweet-${tweet.id} .tweet__main`))
+    ) { navigate(`/${tweet.username}/status/${tweet.id}`) }
+  }
+
+  // Get username from tweet id
+  const getUsername = (tId) => {
+    const twt = tweets.find((tweet) => tweet.id === tId)
+    return twt.username
+  }
+
+  // Return 'reply to' line
+  const setReplyTo = tweet => {
+    const spanReply = document.createElement('span')
+    const a = document.createElement('a')
+
+    spanReply.classList.add('tweet__reply')
+    spanReply.textContent = 'Replying to '
+
+    a.classList.add('tweet__a')
+    a.setAttribute('href', '#home')
+    a.textContent = `@${getUsername(tweet.replyTo)}`
+
+    spanReply.append(a)
+
+    return spanReply
+  }
+
+  useEffect(() => {
+    // Deploying content
+    const tweetContent = document.querySelector('#text-' + tweet.id)
+    tweetContent.innerHTML = `
             <p class="tweet__p">
                 ${tweet.content}
             </p>
-        `;
-    });
+        `
 
-    return (
-        <article className="tweet" onClick={goToTweet}>
-            <div className="tweet__left">
-                <img
-                    src={tweet.profilePic}
-                    alt={tweet.name + " photo"}
-                    className="tweet__profile-pic profile-pic"
-                />
-            </div>
-            <div className="tweet__main">
-                <div className="tweet__header">
-                    <div className="tweet__title">
-                        <span className="tweet__name">{tweet.name}</span>
-                        {verified}
-                        <span className="tweet__username">
-                            {`@` + tweet.username}
-                        </span>
-                        <span className="tweet__time">{timeToShow}</span>
-                    </div>
-                    <button className="dots">
-                        <Dots />
-                    </button>
-                </div>
-                <div className="tweet__content">
-                    <div id={"text-" + tweet.id} className="tweet__text"></div>
-                    <div id={"images-" + tweet.id} className="tweet__images">
-                        {images}
-                    </div>
-                </div>
-                <TweetButtons tweet={tweet} />
-            </div>
-        </article>
-    );
+    // Adding 'replyTo' text
+    if (tweet.replyTo) {
+      tweetContent.prepend(setReplyTo(tweet))
+    }
+  })
+
+  return (
+    <article id={`tweet-${tweet.id}`} className='tweet' onClick={goToTweet}>
+      <div className='tweet__left'>
+        <img
+          src={tweet.profilePic}
+          alt={tweet.name + ' photo'}
+          className='tweet__profile-pic profile-pic'
+        />
+      </div>
+      <div className='tweet__main'>
+        <div className='tweet__header'>
+          <div className='tweet__title'>
+            <span className='tweet__name'>{tweet.name}</span>
+            {verified}
+            <span className='tweet__username'>
+              {'@' + tweet.username}
+            </span>
+            <span className='tweet__time'>{timeToShow}</span>
+          </div>
+          <button className='dots'>
+            <Logos logoName='dots' />
+          </button>
+        </div>
+        <div className='tweet__content'>
+          <div id={'text-' + tweet.id} className='tweet__text' />
+          <div id={'images-' + tweet.id} className='tweet__images'>
+            {images}
+          </div>
+        </div>
+        <TweetButtons tweet={tweet} />
+      </div>
+    </article>
+  )
 }
