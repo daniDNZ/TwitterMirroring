@@ -2,6 +2,9 @@
 
 Copia de la interfaz de usuario de Twitter en su versión web para móviles y tablets. Creado para [Rviewer](https://rviewer.io).
 
+Para una mejor experiencia, utilizar un dispositivo adecuado o la visión adaptativa del inspector del navegador.
+Es necesario simular una pantalla táctil para pasar las imágenes de las galerías.
+
 ## Herramientas utilizadas
 
 Las herramientas y tecnologías utilizadas son:
