@@ -269,6 +269,11 @@ button {
   position: sticky;
   top: 0;
 }
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-color: #000000;
+  }
+}
 @media screen and (min-width: 500px) and (min-height: 640px) {
   .header {
     width: 100%;
@@ -349,6 +354,11 @@ button {
   gap: 2.1rem;
   position: sticky;
   top: 0;
+}
+@media (prefers-color-scheme: dark) {
+  .tweet-view__header {
+    background-color: #000000;
+  }
 }
 .tweet-view__go-back .icon {
   height: 19px;
@@ -446,6 +456,11 @@ button {
   width: 100%;
   position: sticky;
   bottom: 0;
+}
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background-color: #000000;
+  }
 }
 @media screen and (min-width: 500px) and (min-height: 640px) {
   .nav {

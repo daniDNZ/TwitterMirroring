@@ -7,7 +7,7 @@ export default function TweetComments ({ tweet }) {
   return (
     <div className='t-comments'>
       <div className='t-comments__reply'>
-        <img src='/img/profilepic.jpg' alt='' className='profile-pic' />
+        <img src={process.env.PUBLIC_URL + '/img/profilepic.jpg'} alt='' className='profile-pic' />
         <input
           type='text'
           className='t-comments__input'

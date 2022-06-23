@@ -9,6 +9,7 @@
         "verified": true,
         "content": "Subo la apuesta de&nbsp;<a href='#home' class='tweet__a'>@SamsungEspana</a><br /><br />- Hoy es festivo en mi comunidad<br />- Soy autónomo y mis clientes no son de aquí<br /><br /><a href='#home' class='tweet__a'>#dondeEstanMisVacaciones</a>",
         "img": null,
+        "gif": null,
         "counters": {
             "comments": 1,
             "retweets": 12,
@@ -24,7 +25,10 @@
         "date": "2022-06-10T11:15:56.821Z",
         "verified": false,
         "content": "Este gato se llama Link y Ganondorf le teme.",
-        "img": ["/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg"],
+        "img": [
+            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg"
+        ],
+        "gif": null,
         "counters": {
             "comments": 1,
             "retweets": 3,
@@ -41,9 +45,10 @@
         "verified": true,
         "content": "Ahora dos fotos del temible gato psicópata",
         "img": [
-            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg", 
+            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg",
             "/img/7FEADAFA-F392-4F64-B733-15B02487397F_1_105_c.jpeg"
         ],
+        "gif": null,
         "counters": {
             "comments": 1,
             "retweets": 12,
@@ -60,10 +65,11 @@
         "verified": false,
         "content": "Con 3 fotos, probablemente estemos al filo de morir por uña de gato. <br /> No le hemos pedido permiso...",
         "img": [
-            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg", 
+            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg",
             "/img/7FEADAFA-F392-4F64-B733-15B02487397F_1_105_c.jpeg",
             "/img/B57E3095-751F-4BB8-845D-B038A4608CD5_1_105_c.jpeg"
         ],
+        "gif": null,
         "counters": {
             "comments": 1,
             "retweets": 12,
@@ -80,11 +86,12 @@
         "verified": true,
         "content": "Definitivamente digamos adiós a la vida porque me ha pillado. Vamos a morir, socorro.",
         "img": [
-            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg", 
+            "/img/5F739A9D-08E8-46AE-AF1A-24A2795DC1DA_1_105_c.jpeg",
             "/img/7FEADAFA-F392-4F64-B733-15B02487397F_1_105_c.jpeg",
             "/img/B57E3095-751F-4BB8-845D-B038A4608CD5_1_105_c.jpeg",
             "/img/D1312C16-9F84-4CE0-84FE-29A17CA49C1C_1_105_c.jpeg"
         ],
+        "gif": null,
         "counters": {
             "comments": 1,
             "retweets": 12,
@@ -101,7 +108,9 @@
         "verified": true,
         "content": "Adelante con la técnica del arbusto. Es la única forma de sobrevivir.",
         "img": null,
-        "gif": ["/img/gif/homer.gif"],
+        "gif": [
+            "/img/gif/homer.gif"
+        ],
         "counters": {
             "comments": 1,
             "retweets": 12,

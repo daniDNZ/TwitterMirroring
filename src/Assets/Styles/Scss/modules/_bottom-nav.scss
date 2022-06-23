@@ -5,6 +5,9 @@
 .nav {
   background-color: base.$color-bg;
   width: 100%;
+  @include base.darkMode(){
+    background-color: base.$color-bg-dark;
+  }
 
   position: sticky;
   bottom: 0;

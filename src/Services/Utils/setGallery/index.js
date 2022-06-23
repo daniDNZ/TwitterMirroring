@@ -12,7 +12,7 @@ const generateImgs = (tweet, gClass) => {
           className={'tweet__image-g' + gClass}
           key={'img-' + gClass + img}
         >
-          <img src={img} alt='' className='tweet__image' />
+          <img src={process.env.PUBLIC_URL + img} alt='' className='tweet__image' />
         </Link>
       ))}
     </div>
@@ -31,7 +31,7 @@ export default function setGallery (tweet) {
         images = (
           <Link to={`/${tweet.username}/status/${tweet.id}/img/1`}>
             <img
-              src={tweet.img}
+              src={process.env.PUBLIC_URL + tweet.img}
               alt=''
               className='tweet__image tweet__image-g1'
             />
@@ -56,7 +56,7 @@ export default function setGallery (tweet) {
   } else if (tweet.gif !== null) {
     images = (
       <img
-        src={tweet.gif}
+        src={process.env.PUBLIC_URL + tweet.gif}
         alt=''
         className='tweet__image tweet__image-g1'
       />

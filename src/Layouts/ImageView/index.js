@@ -20,7 +20,7 @@ export default function ImageView () {
   if (tweet.img !== null) {
     images = tweet.img.map((img, index) => (
       <img
-        src={img}
+        src={process.env.PUBLIC_URL + img}
         alt=''
         className='image-view__img'
         key={'img-' + tweet.username + index}

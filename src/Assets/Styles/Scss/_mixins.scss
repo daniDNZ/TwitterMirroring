@@ -17,4 +17,8 @@
 @mixin bgHeader () {
   background-color: rgba(base.$color-bg, 0.8);
   backdrop-filter: blur(10px);
+
+  @include base.darkMode {
+    background-color: base.$color-bg-dark;
+  }
 }

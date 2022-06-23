@@ -50,7 +50,7 @@ export default function Tweet ({ tweet }) {
     <article id={`tweet-${tweet.id}`} className='tweet' onClick={goToTweet}>
       <div className='tweet__left'>
         <img
-          src={tweet.profilePic}
+          src={process.env.PUBLIC_URL + tweet.profilePic}
           alt={tweet.name + ' photo'}
           className='tweet__profile-pic profile-pic'
         />

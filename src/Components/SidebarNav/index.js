@@ -61,7 +61,7 @@ export default function SidebarNav () {
         </div>
         <div className='sidebar-nav__user'>
           <img
-            src='/img/profilepic.jpg'
+            src={process.env.PUBLIC_URL + '/img/profilepic.jpg'}
             alt='Profile pic'
             className='profile-pic'
           />

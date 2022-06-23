@@ -6,7 +6,7 @@ export default function WhatsHappening () {
       <article className='tweet wh'>
         <div className='tweet__left'>
           <img
-            src='/img/profilepic.jpg'
+            src={process.env.PUBLIC_URL + '/img/profilepic.jpg'}
             alt='Profile pic'
             className='tweet__profile-pic profile-pic'
           />

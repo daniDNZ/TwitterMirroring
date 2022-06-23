@@ -29,7 +29,7 @@ export default function TweetDetail ({ tweet }) {
     <div className='t-detail'>
       <div className='t-detail__header'>
         <img
-          src={tweet.profilePic}
+          src={process.env.PUBLIC_URL + tweet.profilePic}
           alt=''
           className='t-detail__profile-pic profile-pic'
         />

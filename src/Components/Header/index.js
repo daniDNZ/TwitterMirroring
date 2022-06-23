@@ -5,7 +5,7 @@ export default function Header () {
     <header className='header'>
       <div className='header__container'>
         <img
-          src='/img/profilepic.jpg'
+          src={process.env.PUBLIC_URL + '/img/profilepic.jpg'}
           alt='Profile pic'
           className='header__img profile-pic'
         />
