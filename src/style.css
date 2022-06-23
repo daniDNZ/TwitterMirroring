@@ -192,13 +192,17 @@ button {
   justify-content: center;
   align-items: flex-start;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .app {
     max-width: 700px;
   }
 }
 
-@media screen and (min-width: 500px) {
+.home {
+  min-height: 100vh;
+  width: 100%;
+}
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .home {
     max-width: 600px;
     display: flex;
@@ -208,15 +212,25 @@ button {
   }
 }
 
+.home__main {
+  width: 100%;
+  min-height: 100vh;
+}
+@media screen and (min-width: 500px) and (min-height: 640px) {
+  .home__main {
+    border-left: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-right: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
 .sidebar-nav {
   height: 100vh;
-  margin: 0 auto;
   padding: 0 1rem;
   position: sticky;
   top: 0;
   display: none;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .sidebar-nav {
     display: flex;
   }
@@ -248,16 +262,6 @@ button {
   margin: 1.5rem auto;
 }
 
-.home__main {
-  width: 100%;
-}
-@media screen and (min-width: 500px) {
-  .home__main {
-    border-left: 0.5px solid rgba(0, 0, 0, 0.1);
-    border-right: 0.5px solid rgba(0, 0, 0, 0.1);
-  }
-}
-
 .header {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.8);
@@ -265,7 +269,7 @@ button {
   position: sticky;
   top: 0;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .header {
     width: 100%;
   }
@@ -288,7 +292,7 @@ button {
   min-width: 30px;
   min-height: 30px;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .header .header__img {
     display: none;
   }
@@ -303,7 +307,7 @@ button {
   font-weight: 600;
   flex-grow: 1;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .header__title {
     font-size: 1.4em;
   }
@@ -331,9 +335,12 @@ button {
 
 .tweet-view {
   padding: 0 0.9rem;
+  min-height: 100vh;
 }
 .tweet-view__header {
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   padding: 0.6rem 0;
   display: flex;
   flex-flow: row nowrap;
@@ -433,13 +440,14 @@ button {
   font-size: 1.2rem;
   font-weight: 400;
 }
+
 .nav {
   background-color: #ffffff;
   width: 100%;
   position: sticky;
   bottom: 0;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .nav {
     display: none;
   }
@@ -570,7 +578,7 @@ button {
   bottom: 70px;
   right: 20px;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .new-tweet {
     height: 48px;
     width: 48px;
@@ -588,7 +596,7 @@ button {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .feed .new-tweet {
     display: none;
   }
@@ -661,6 +669,10 @@ button {
 .tweet__time {
   color: rgb(81, 99, 114);
   font-weight: 500;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -709,7 +721,7 @@ button {
 }
 .tweet__image-g1 {
   max-height: 400px;
-  width: 300px;
+  width: 100%;
   border-radius: 15px;
 }
 .tweet__reply {
@@ -750,7 +762,7 @@ button {
 .wh {
   display: none;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (min-height: 640px) {
   .wh {
     display: flex;
   }

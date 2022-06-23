@@ -1,8 +1,8 @@
-import tweets from '../../Assets/Data/Tweets/tweets.json'
+import getComments from '../../Services/Utils/getComments'
 import Tweet from '../Tweet'
 
 export default function TweetComments ({ tweet }) {
-  const comments = tweets.filter((t) => t.replyTo === tweet.id)
+  const comments = getComments(tweet)
 
   return (
     <div className='t-comments'>

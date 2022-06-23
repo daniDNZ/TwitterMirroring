@@ -1,0 +1,58 @@
+@use '../base';
+@use '../mixins';
+@use '../variables';
+
+.nav {
+  background-color: base.$color-bg;
+  width: 100%;
+
+  position: sticky;
+  bottom: 0;
+
+  @include mixins.tabletS(){
+      display: none;
+  }
+
+  &__a {
+      width: calc(100vw / 4);
+      padding: 0.8rem;
+
+      position: relative;
+  }
+
+  &__icon--notification:after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 6px;
+      background-color: base.$color-twitter-blue;
+
+      position: absolute;
+      top: -3.5px;
+      left: 70%;
+  }
+
+  &__icon {
+      width: fit-content;
+      height: fit-content;
+
+      margin: 0 auto;
+
+      position: relative;
+  }
+
+  &__icon .icon {
+      height: 24.5px;
+      width: 24.5px;
+  }
+
+  &__ul {
+      width: 100%;
+      border-top: variables.$border;
+
+      margin: 0 auto;
+
+      position: relative;
+      @include mixins.flex(row, nowrap, center, center);
+  }
+}

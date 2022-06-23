@@ -1,0 +1,55 @@
+@use '../mixins';
+@use '../base';
+
+.sidebar-nav {
+  height: 100vh;
+  
+  // margin: 0 auto; 
+  padding: 0 1rem;
+
+  position: sticky;
+  top:0;
+
+  display: none;
+
+  @include mixins.tabletS(){
+      display: flex;
+  }
+
+  &__container {
+      height: 100%;
+      
+      @include mixins.flex(column, nowrap, space-between, center);
+  }
+
+  &__buttons {
+      & .nav__a {
+          width: fit-content;
+          
+          margin: 0 auto;
+          padding: .9rem .8rem;
+
+      }
+  }
+
+  &__logo .nav__a{
+      width: fit-content;
+
+      margin: 0 auto;
+      padding-bottom: 1rem;
+
+      & .icon {
+          width: 30px;
+          fill: base.$color-twitter-blue;
+      }
+  }
+
+  &__user {
+      & .profile-pic {
+          width: 38px;
+          height: 38px;
+
+          margin: 1.5rem auto;
+      }
+  }
+}

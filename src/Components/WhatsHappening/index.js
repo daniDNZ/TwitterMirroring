@@ -13,7 +13,7 @@ export default function WhatsHappening () {
         </div>
         <div className='tweet__main'>
           <div className='tweet__content'>
-            <input type='text' class='wh__input' placeholder="What's happening?" />
+            <input type='text' className='wh__input' placeholder="What's happening?" />
           </div>
           <div className='tweet__buttons'>
             <div className='wh__buttons'>

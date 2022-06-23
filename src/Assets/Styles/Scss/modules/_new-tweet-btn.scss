@@ -1,0 +1,42 @@
+@use '../base';
+@use '../mixins';
+
+// NEW TWEET BUTTON
+.new-tweet {
+  height: 53px;
+  width: 53px;
+  background-color: base.$color-twitter-blue;
+  border-radius: 50%;
+  box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 8px,
+      rgba(101, 119, 134, 0.25) 0px 1px 3px 1px;
+
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+
+  @include mixins.tabletS() {
+      height: 48px;
+      width: 48px;
+      box-shadow: none;
+
+      margin: .7rem auto;
+      
+      position: relative;
+      bottom: inherit;
+      right: inherit;
+  }
+
+  & .icon {
+      height: 23px;
+      width: 23px;
+      fill: white;
+
+      margin: 0 auto;
+  }
+}
+
+.feed .new-tweet {
+  @include mixins.tabletS() {
+      display: none;
+  }
+}

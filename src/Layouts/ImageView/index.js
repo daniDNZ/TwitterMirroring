@@ -8,7 +8,7 @@ export default function ImageView () {
   // Storing params
   const { tweetId, n } = useParams()
 
-  // Setting navigate
+  // useNavigate to go back
   const navigate = useNavigate()
 
   // Find the current tweet
@@ -16,6 +16,7 @@ export default function ImageView () {
 
   let images = <></>
 
+  // Generate all imgs
   if (tweet.img !== null) {
     images = tweet.img.map((img, index) => (
       <img

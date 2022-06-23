@@ -3,37 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import TweetButtons from '../TweetButtons'
 import getVerified from '../../Services/Utils/getVerified'
 
-import tweets from '../../Assets/Data/Tweets/tweets.json'
 import setGallery from '../../Services/Utils/setGallery'
 import Logos from '../../Services/Utils/Logos'
+import getDateDifference from '../../Services/Utils/getDateDifference'
+import getReplyTo from '../../Services/Utils/getReplyTo'
 
 export default function Tweet ({ tweet }) {
   let images = <></>
   const navigate = useNavigate()
 
   // Get date difference
-  const getDateDifference = tweet => {
-    const currentDate = new Date()
-    const tweetDate = new Date(tweet.date)
-    let timeToShow
-
-    if (currentDate.toLocaleDateString() === tweetDate.toLocaleDateString()) {
-      currentDate.getHours() === tweetDate.getHours()
-        ? (timeToShow = `${
-        currentDate.getMinutes() - tweetDate.getMinutes()
-      }m`)
-        : (timeToShow = `${
-        currentDate.getHours() - tweetDate.getHours()
-      }h`)
-    } else {
-      timeToShow = ` ${
-        tweetDate.toDateString().split(' ')[1]
-      } ${tweetDate.getDate()}`
-    }
-
-    return timeToShow
-  }
-
   const timeToShow = getDateDifference(tweet)
 
   // Get verified icon
@@ -52,29 +31,6 @@ export default function Tweet ({ tweet }) {
     ) { navigate(`/${tweet.username}/status/${tweet.id}`) }
   }
 
-  // Get username from tweet id
-  const getUsername = (tId) => {
-    const twt = tweets.find((tweet) => tweet.id === tId)
-    return twt.username
-  }
-
-  // Return 'reply to' line
-  const setReplyTo = tweet => {
-    const spanReply = document.createElement('span')
-    const a = document.createElement('a')
-
-    spanReply.classList.add('tweet__reply')
-    spanReply.textContent = 'Replying to '
-
-    a.classList.add('tweet__a')
-    a.setAttribute('href', '#home')
-    a.textContent = `@${getUsername(tweet.replyTo)}`
-
-    spanReply.append(a)
-
-    return spanReply
-  }
-
   useEffect(() => {
     // Deploying content
     const tweetContent = document.querySelector('#text-' + tweet.id)
@@ -86,7 +42,7 @@ export default function Tweet ({ tweet }) {
 
     // Adding 'replyTo' text
     if (tweet.replyTo) {
-      tweetContent.prepend(setReplyTo(tweet))
+      tweetContent.prepend(getReplyTo(tweet))
     }
   })
 

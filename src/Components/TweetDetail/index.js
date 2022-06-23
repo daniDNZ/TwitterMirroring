@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import getInteractionCounters from '../../Services/Utils/getInteractionCounters'
+import getTimeData from '../../Services/Utils/getTimeData'
 import getVerified from '../../Services/Utils/getVerified'
 import Logos from '../../Services/Utils/Logos'
 import setGallery from '../../Services/Utils/setGallery'
@@ -6,47 +8,14 @@ import TweetButtons from '../TweetButtons'
 
 export default function TweetDetail ({ tweet }) {
   let images = <></>
-  // Setting verified icon if the user is verified
+  // Get verified icon if the user is verified
   const verified = getVerified(tweet)
 
-  // Setting time data
-  const timeData = tweet => {
-    const tweetDate = new Date(tweet.date)
-    const time = tweetDate.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true
-    })
-    const date = ` ${
-      tweetDate.toDateString().split(' ')[1]
-      } ${tweetDate.getDate()}, ${tweetDate.getFullYear()}`
+  // Get time data
+  const datetime = getTimeData(tweet)
 
-    return (`${time} · ${date}`)
-  }
-
-  const datetime = timeData(tweet)
-
-  // Setting counters
-  const setCounters = tweet => {
-    let retweets = <></>
-    let likes = <></>
-    if (tweet.counters.retweets) {
-      retweets = (
-        <span className='t-detail__counter'>
-          <b>{tweet.counters.retweets}</b> Retweets
-        </span>
-      )
-    }
-    if (tweet.counters.likes) {
-      likes = (
-        <span className='t-detail__counter'>
-          <b>{tweet.counters.likes}</b> Likes
-        </span>
-      )
-    }
-    return { retweets, likes }
-  }
-  const counters = setCounters(tweet)
+  // Get counters
+  const counters = getInteractionCounters(tweet)
 
   // Making gallery
   images = setGallery(tweet)

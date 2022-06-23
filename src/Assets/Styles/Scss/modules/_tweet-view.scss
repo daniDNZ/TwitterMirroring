@@ -1,0 +1,134 @@
+@use '../mixins';
+@use '../variables';
+
+// TWEET VIEW
+.tweet-view {
+  padding: 0 0.9rem;
+  min-height: 100vh;
+
+  &__header {
+      width: 100%;
+      @include mixins.bgHeader;
+
+      padding: 0.6rem 0;
+
+      @include mixins.flex(row, nowrap, flex-start, center);
+      gap: 2.1rem;
+
+      position: sticky;
+      top: 0;
+  }
+
+  &__go-back {
+      & .icon {
+          height: 19px;
+          width: 19px;
+      }
+  }
+
+  &__h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+  }
+
+  &__open-app {
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgb(207, 217, 222);
+      border-radius: 50px;
+
+      padding: 0.4rem 1rem;
+      margin-left: auto;
+  }
+
+  & .tweet {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+
+// TWEET VIEW -> TWEET DETAIL
+.t-detail {
+  
+  &__header {
+      padding: 0.5rem 0;
+
+      @include mixins.flex(row, nowrap, flex-start, center);
+      gap: 0.6rem;
+
+      & .dots {
+          align-self: flex-start;
+      }
+  }
+
+  &__profile-info {
+      width: 100%;
+      @include mixins.flex(row, nowrap, space-between, center);
+      gap: 0.1rem;
+  }
+
+  &__text {
+      font-size: 1.4rem;
+      font-weight: 400;
+  }
+
+  &__data {
+      padding: 1rem 0;
+      border-bottom: variables.$border;
+  }
+
+  &__counters {
+      padding: 1rem 0;
+      border-bottom: variables.$border;
+  }
+
+  &__counter {
+      margin-right: 1.1rem;
+  }
+
+  &__interaction {
+      border-bottom: variables.$border;
+
+      padding: 0.8rem 0;
+
+      & .tweet__buttons {
+          margin-top: 0;
+
+          justify-content: space-around;
+      }
+
+      & .tweet__icon .icon {
+          width: 21px;
+          height: 21px;
+      }
+  }
+}
+
+.profile-info {
+  &__name {
+      font-weight: 600;
+
+      @include mixins.flex(row, nowrap, flex-start, center);
+  }
+}
+
+// TWEET VIEW -> TWEETCOMMENTS
+
+.t-comments {
+  &__reply {
+      width: 100%;
+      border-bottom: variables.$border;
+
+      padding: 0.7rem 0;
+
+      @include mixins.flex(row, nowrap, flex-start, center);
+      gap: 1rem;
+  }
+
+  &__input {
+      &::placeholder {
+          font-size: 1.2rem;
+          font-weight: 400;
+      }
+  }
+}
