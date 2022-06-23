@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/TwitterMirroring/static/css/main.10d5ed61.css",
+    "main.js": "/TwitterMirroring/static/js/main.d1f71f34.js",
+    "static/js/787.37739fdf.chunk.js": "/TwitterMirroring/static/js/787.37739fdf.chunk.js",
+    "static/media/stars.svg": "/TwitterMirroring/static/media/stars.6827bc45f6f702cfa419c5f1db9823b9.svg",
+    "static/media/verified.svg": "/TwitterMirroring/static/media/verified.5f859388b59ae581eb907fa582e44871.svg",
+    "static/media/person.svg": "/TwitterMirroring/static/media/person.507c5ed3154bde75038ed184a1df42cc.svg",
+    "static/media/location.svg": "/TwitterMirroring/static/media/location.e1dcea4fc525c6555071e7ff6c7ef562.svg",
+    "static/media/bell.svg": "/TwitterMirroring/static/media/bell.cfc33d0ad6c88a5f344860269f275789.svg",
+    "static/media/home.svg": "/TwitterMirroring/static/media/home.c64a154d7f6c6b48dd36935250006a75.svg",
+    "static/media/retweet.svg": "/TwitterMirroring/static/media/retweet.904d2ca86528e1d39103372e69b23b0a.svg",
+    "static/media/twitter.svg": "/TwitterMirroring/static/media/twitter.d20b70761c7a3d04034bd3b011632437.svg",
+    "static/media/smiley.svg": "/TwitterMirroring/static/media/smiley.12b81a8a8422203e9e690248bce5a2e8.svg",
+    "static/media/gif.svg": "/TwitterMirroring/static/media/gif.645b7a60c9cdfb6aacd29280eb0285f5.svg",
+    "static/media/image.svg": "/TwitterMirroring/static/media/image.2b9219673d12ddd9360ab9f13c30f9c1.svg",
+    "static/media/document.svg": "/TwitterMirroring/static/media/document.e06eb0f967bae43cda970d06da5e7e8a.svg",
+    "index.html": "/TwitterMirroring/index.html",
+    "static/media/comment.svg": "/TwitterMirroring/static/media/comment.9b4509edbab0e5c58531ebf579065749.svg",
+    "static/media/share.svg": "/TwitterMirroring/static/media/share.d1b4d314e58b4ec660141afd979fe3e1.svg",
+    "static/media/like.svg": "/TwitterMirroring/static/media/like.9d8669f9caf4a7d65789b4587bf5e4b7.svg",
+    "static/media/mail.svg": "/TwitterMirroring/static/media/mail.916e340c9417eee80e2630eb9e1a9cd1.svg",
+    "static/media/homeFill.svg": "/TwitterMirroring/static/media/homeFill.60140f98c37bc1f93afb7e9b1acd4c21.svg",
+    "static/media/bookmark.svg": "/TwitterMirroring/static/media/bookmark.ce132cefb084d2123029c9551c6341e2.svg",
+    "static/media/newTweet.svg": "/TwitterMirroring/static/media/newTweet.5aea73665d774b7bfd6e405047b4135b.svg",
+    "static/media/close.svg": "/TwitterMirroring/static/media/close.2aac7bbaad2597167e35f51504d936dd.svg",
+    "static/media/more-rounded.svg": "/TwitterMirroring/static/media/more-rounded.316f05aa587663e29278465f600dabde.svg",
+    "static/media/lens.svg": "/TwitterMirroring/static/media/lens.6c205298172031eea021e938db3945b1.svg",
+    "static/media/arrow.svg": "/TwitterMirroring/static/media/arrow.c2078e2f90f9ccb03eaea7203631402a.svg",
+    "static/media/more-dots.svg": "/TwitterMirroring/static/media/more-dots.cb554234bd7059ca32e594ab1af1affd.svg",
+    "main.10d5ed61.css.map": "/TwitterMirroring/static/css/main.10d5ed61.css.map",
+    "main.d1f71f34.js.map": "/TwitterMirroring/static/js/main.d1f71f34.js.map",
+    "787.37739fdf.chunk.js.map": "/TwitterMirroring/static/js/787.37739fdf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10d5ed61.css",
+    "static/js/main.d1f71f34.js"
+  ]
+}
