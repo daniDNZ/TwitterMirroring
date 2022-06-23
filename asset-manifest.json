@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TwitterMirroring/static/css/main.6189413f.css",
-    "main.js": "/TwitterMirroring/static/js/main.3213f826.js",
+    "main.css": "/TwitterMirroring/static/css/main.e4f56b5e.css",
+    "main.js": "/TwitterMirroring/static/js/main.e2ed7f17.js",
     "static/js/787.37739fdf.chunk.js": "/TwitterMirroring/static/js/787.37739fdf.chunk.js",
     "static/media/stars.svg": "/TwitterMirroring/static/media/stars.6827bc45f6f702cfa419c5f1db9823b9.svg",
     "static/media/verified.svg": "/TwitterMirroring/static/media/verified.5f859388b59ae581eb907fa582e44871.svg",
@@ -28,12 +28,12 @@
     "static/media/lens.svg": "/TwitterMirroring/static/media/lens.6c205298172031eea021e938db3945b1.svg",
     "static/media/arrow.svg": "/TwitterMirroring/static/media/arrow.c2078e2f90f9ccb03eaea7203631402a.svg",
     "static/media/more-dots.svg": "/TwitterMirroring/static/media/more-dots.cb554234bd7059ca32e594ab1af1affd.svg",
-    "main.6189413f.css.map": "/TwitterMirroring/static/css/main.6189413f.css.map",
-    "main.3213f826.js.map": "/TwitterMirroring/static/js/main.3213f826.js.map",
+    "main.e4f56b5e.css.map": "/TwitterMirroring/static/css/main.e4f56b5e.css.map",
+    "main.e2ed7f17.js.map": "/TwitterMirroring/static/js/main.e2ed7f17.js.map",
     "787.37739fdf.chunk.js.map": "/TwitterMirroring/static/js/787.37739fdf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6189413f.css",
-    "static/js/main.3213f826.js"
+    "static/css/main.e4f56b5e.css",
+    "static/js/main.e2ed7f17.js"
   ]
 }
